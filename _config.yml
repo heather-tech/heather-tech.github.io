@@ -21,7 +21,7 @@ timezone:
 
 title: Happy Coding                          # the main title
 
-tagline: Blogging coding journey   # it will display as the sub-title
+tagline: Blogging my coding journey   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
