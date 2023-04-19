@@ -1,9 +1,309 @@
 ---
 title: Phase 1-Blog 1
-date: 2023-03-09 
+date: 2023-04-19 
 categories: [blog, learning, coding]
-tags: [flatiron, student, bootcamp, javascript]    #TAG names should always be in lowercase
+tags: [flatiron, student, bootcamp, javascript, technical, terms]    #TAG names should always be in lowercase
 ---
+<br>
 
-# Phase 1 - Blog Post 1
+# A Study Guide For JavaScript 
 
+## The Basics
+
+- **Variables**
+    - Container in which we can store values for later retrieval
+        - **let**
+            - Can't redeclare a variable, but can reassign the value
+        - **const**
+            - Cannot be redeclared or reassigned
+            - Must assign value right away
+        - **var**
+            - Can be redeclared and reassigned without warning
+            - Avoid 
+
+- **Operators**
+    - Operators do not need parentheses
+        - `+`
+        - `!`
+        - `<=`
+        - `typeof`
+
+- **Logical Operators**
+    - Used to evaluate boolean expressions
+        - `!` NOT
+        - `&&` AND
+        - `||` OR
+
+| Left Side   | Right Side           | Return Value  | Truthiness or Return Value |
+| :---:       |    :----:            |         :---: | :---:                      |
+| Falsey      | Doesn't Matter       | Left Side     | Falsey                     |
+| Truthy      | Falsey               | Right Side    | Falsey                     |
+| Truthy      | Truthy               | Right Side    | Truthy                     |
+
+
+## Basic Data Types 
+
+- **Numbers**
+    - Only has a single, all-encompassing number type
+
+- **Strings**
+    - Matching pair of `' '` , `" "` , `` ` ` `` with zero or more characters in between
+    - Empty strings are strings `" "` 
+    - `" "` and `' '` used interchangeably
+
+- **Boolean**
+    - Can only be `True` or `False`
+    - Plays a big role in `if` statements and looping
+
+- **Objects**
+    - Collection of data rather than a single value
+    - Consists of a list of properties wrapped in curly braces `{ }` and separated by commas
+    - Each property in the list consists of a key-which points to a value
+    <!-- -  key : value -->
+    - Objects properties can point to values of any data type 
+
+
+- **Arrays**
+    - Technically not a data type in JavaScript
+    - Special case of the object data type
+    - Displays objects
+    - List of values enclosed in square brackets `["Reid", "Harper"]`
+        - Values can be of any data type
+
+- **Null**
+    - Represents intentionally absent objects
+
+- **Undefined**
+    - Means "not yet assigned a value"
+
+- 6 out of 7 are **primitive data types** meaning they represent single values
+    - Object is not a primitive data type
+    - Examples: 7, "hello", false
+
+## Strings
+
+- **Interpolation**
+    - Process of injecting the value of an expression into a string
+
+- **Interpolation Operator** `${}`
+    - Any expression/statement that returns a value can be used
+
+- `+` when placed between two strings, it joins them and returns a new string
+
+- By using backticks and the interpolation operator, we are telling JavaScript to:
+    - Interpret the expression inside the `${}`
+    - Convert it to a string
+    - Insert it into our string
+
+- When to use `+` vs. `${}`
+    - General Rule
+        - String = simple & short
+            - `+` may be cleaner
+        - String = complex 
+            - Use `${}` 
+## Equality Operators
+
+- **strict equality operator** `===`
+    - Returns true if two values are equal without performing conversions
+- **strict inequality operator** `!==`
+    - Returns true if two values are not equal without performing type conversions
+    -EXAMPLE
+- **loose equality operator** `==`
+    - Returns true if two values are equal
+- **loose inequality operator** `!=`
+    - Returns true if two values are not equal
+    - Opposite of `==`
+- For comparisons use `===` and `!==`
+
+## Scope
+
+- **Scope**-what we access and where we can access it
+    - **Global**
+        - Accessible in every scope
+        - Cannot access function or block scope
+    - **Function**
+        - Accessible within a function
+        - Specific to a single function
+        - Can't be accessed by anything in outer scopes
+    - **Block**
+        - Accessible within a block
+        - A variable declared with **let** or **const** is only available within the block of code in which it is declared
+        - Can't be accessed by anything in outer scopes
+
+## DOM Manipulation
+
+- DOM Programming consists of using JavaScript to:
+    - Ask the DOM to find or select an HTML element or elements in the rendered page
+    - Remove and/or insert one or more elements
+    - Adjust a property of selected element(s)
+        - Can use DOM programming to create and modify content that users see in their browsers and add interactivity to our web pages
+            - Only changes what the user sees
+                - Underlying code is **not** changed
+            - Page goes back to its original state once refreshed
+- **Nodes**
+    - Objects in the DOM that consist of tags
+    - Nodes & elements are NOT the same 
+    - All elements in the DOM are nodes, NOT all nodes are HTML elements
+
+### The Structure of DOM Content
+
+- DOM Nodes often have a starting tag and an ending tag
+    - `<p>` paragraph `</p>`
+    - `<main>` main section `</main>`
+- Can nest other nodes inside if it has a starting and ending tag
+    - **Child node**
+        - Inner node
+    - **Parent node**
+        - Outer node
+
+- **Self-Closing Elements** / **Void Elements**
+    - Only have a starting tag
+    - Void elements do NOT have any content nested inside of them and cannot be parent nodes
+
+``` 
+<img src="https://example.gif" 
+        alt="example gif"/> 
+```
+
+### Grab the DOM
+
+- `document.querySelector`
+    - Returns the first element that matches the specified CSS selector
+- `document.querySelectorAll`
+    - Returns a list of all elements that match the specified CSS selector
+- `document.getElementById`
+    - Returns the element that matches the specified ID
+- `document.createElement`
+    - Creates a new element with a specified tagName
+- **Event Listeners**-A function that is triggered/called when the specified event occurs
+    - A Few Possible Events
+        - Mouse Events
+        - Keyboard Events
+        - Touch
+
+##  Communication is Key
+
+- **API**-application programming interface is a way for companies and organizations to expose their data to the public for use
+
+- **JSON**-JavaScript object notation commonly used for transmitting data in web applications 
+
+- **Fetch**-starts a request and returns a promise
+    - Function that retrieves data
+        - **Promise**
+            - **Pending**-Initial state, before the promise succeeds or fails
+            - **Resolved**-Completed promise
+            - **Rejected**-Failed promise
+### Asynchronous Vs. Synchronous
+
+- **Asynchronous**-code allows other code to run while the request is being made
+- **Synchronous**-code blocks the execution of other code until the request is completed
+
+
+## Loops and Iterations
+
+- **`.map()`**-used to create a new array by using an existing array and applying a function to each element of the array
+
+```
+const array1 = [1, 4, 9, 16];
+
+// Pass a function to map
+const map1 = array1.map(x => x * 2);
+
+console.log(map1);
+// Expected output: Array [2, 8, 18, 32]
+```
+
+- **`.forEach()`**-used to iterate over an array and execute a function on each element of the array
+
+```
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach(element => console.log(element));
+
+// Expected output: "a"
+// Expected output: "b"
+// Expected output: "c"
+
+```
+
+- **`.filter()`**-used to apply a specific condition to an array or collection and return a new array that contains only the elements that meet that condition
+    - Enables us to write less repetitive code
+```
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
+```
+- **`.find()`**-used to get the value of the first element in the array that satisfies the provided condition
+    - If no element satisfies the condition, it returns undefined
+```
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find(element => element > 10);
+
+console.log(found);
+// Expected output: 12
+```
+- **`for...in`**-loop is used to iterate over the enumerable properties of an object
+    - Iterates over the keys of the object, and you can access the corresponding value using the square bracket notation
+
+- **`for...of`**-loop is used to iterate over the values of an iterable object, such as an array or a string
+    - Iterates over the values of the array
+    - Can access each value directly
+
+![Array methods using cupcakes!](arraymethods.png)
+
+## Functions Vs. Arrow Functions
+
+- **Function**-an object that contains statements that can be executed or called multiple times
+```
+const getRectArea = function(width, height) {
+  return width * height;
+};
+
+console.log(getRectArea(3, 4));
+// Expected output: 12
+```
+- **Arrow function**-shorthand way to declare functions
+    - Does not require `function` keyword
+    - No `{ }` = implicit return
+        - Does not require `return` keyword
+    - One parameter = `( )` become optional
+```
+const materials = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
+
+console.log(materials.map(material => material.length));
+// Expected output: Array [8, 6, 7, 9]
+```
+## Callbacks
+
+- **Callback function**-a function passed into another function as an asrgument, then invoked inside the outer function to complete an action
+
+Below is a synchronous callback. It is executed immediately.
+```
+function greeting(name) {
+  alert(`Hello, ${name}`);
+}
+
+function processUserInput(callback) {
+  const name = prompt("Please enter your name.");
+  callback(name);
+}
+
+processUserInput(greeting);
+```
+
+#### Please note this is NOT all of JavaScript and just a very brief overview!
+
+## Resources
+
+Array methods cupcake graphic created by [Mike.](https://ifmikethencode.medium.com/going-on-an-array-hunt-in-javascript-8a13a40af90c)
+
+Most of the code examples and definitions came from [MDN.](https://developer.mozilla.org/en-US/)
